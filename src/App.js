@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 function App() {
 
-  document.body.style.padding = "20px";
+  document.body.style.padding = 0;
   document.body.style.margin = 0;
   document.body.style.boxSizing = "border-box";
   document.body.style.background = "black";
@@ -49,26 +49,20 @@ function App() {
     <div style={{ backgroundColor: "#003",
                   color:"white",
                   padding:"20px",
-                  position: 'absolute',
-                  width:"100%",
-                  maxWidth:"500px",
-                  top:"50%",
-                  left:"50%",
-                  transform:'translate(-50%,-50%)',
      }}>
-      <div style={{ backgroundColor: "#900000 ", color:"white",padding:"20px",display:'flex'}}>
-          {fibonacci.map((item, index) => (
-              <div key={index} style={{padding:"0px"}}>
-                    {item}{index === fibonacci.length - 1 ? " " : "_"}
-              </div>
-          ))}
+      <div style={{ backgroundColor: "#900000 ", color:"white",padding:"20px",}}>
+      <h2>Fibonacci</h2>
+        <div style={{display:'flex',flexWrap:'wrap'}}>
+              {fibonacci.map((item, index) => (
+                 <div key={index} style={{padding:"0px"}}>{item}{index === fibonacci.length - 1 ? " " : "__"}</div>))
+              }
+        </div>
       </div>
-
       <br></br>
       <br></br>
       <br></br>
-
       <div style={{ backgroundColor: "#007050 ", color:"white",padding:"20px"}}>
+        <h2>Factorial</h2>
         {
             factorial.map((item,index)=>(
                 <div key={index}>{index+1 +"! = "+item}</div>
